@@ -1,0 +1,11 @@
+Задача40
+
+from google.colab import drive
+drive.mount('/content/drive')
+import pandas as pd
+df = pd.read_csv('/content/drive/My Drive/Colab Notebooks/sample_data/california_housing_train.csv')
+df_filtered = df[(df['population'] >= 0) & (df['population'] <= 500)]
+average_cost = df_filtered['median_house_value'].mean()
+print("Средняя стоимость дома, где кол-во людей от 0 до 500: ", average_cost)
+
+
